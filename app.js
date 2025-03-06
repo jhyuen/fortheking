@@ -21,6 +21,18 @@ $(document).ready(function(){
         $(".subpage." + subpageTo).addClass("active");
     });
 
+    $("[link]").click(function () {
+        var url = $(this).attr("link");
+        var win = window.open(url);
+        if (win) {
+            //Browser has allowed it to be opened
+            win.focus();
+        } else {
+            //Browser has blocked it
+            alert('Please allow popups for this website');
+        }
+    });
+
     $("body").mousemove(function(e) {
         var X = e.pageX - (width / 2);
         var Y = e.pageY - (height / 2);
