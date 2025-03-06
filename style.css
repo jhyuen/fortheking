@@ -168,6 +168,15 @@ body {
     width: 100%;
 }
 
+.back_button svg #back_arrow {
+    stroke: black;
+    transition: stroke ease 0.5s;
+}
+
+.back_button:hover svg #back_arrow {
+    stroke: maroon;
+}
+
 .logo {
     position: relative;
     font-size: 2em;
@@ -188,13 +197,16 @@ body {
 
 .logo svg #crown {
     stroke: black;
+    transition: stroke ease 0.5s;
 }
 .logo svg #plus {
     stroke: black;
     fill: black;
+    transition: fill ease 0.5s;
 }
 .logo svg #sheep {
     fill: black;
+    transition: fill ease 0.5s;
 }
 
 .logo:hover svg #crown {
