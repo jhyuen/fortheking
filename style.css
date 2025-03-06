@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     opacity: 0;
     left: 0;
     top: 0;
@@ -93,6 +94,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: black;
+    transition: color ease 0.5s;
+}
+
+.menu_button:hover {
+    color: maroon;
 }
 
 .menu_button.active {
@@ -237,7 +244,7 @@ body {
     opacity: 0%;
     pointer-events: none;
     transition: ease 0.5s;
-    width: 38%;
+    width: 45%;
 }
 
 .subpage.active {
@@ -257,7 +264,7 @@ a:hover {
 
 .title {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold; 
     margin-bottom: 0.5em;
     position: relative;
@@ -266,5 +273,5 @@ a:hover {
 .description {
     position: relative;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
 }
