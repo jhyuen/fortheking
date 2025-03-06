@@ -162,7 +162,7 @@ body {
     transform: translateX(-50%);
 }
 
-.back_button img {
+.back_button svg {
     position: relative;
     height: auto;
     width: 100%;

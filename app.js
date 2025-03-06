@@ -54,7 +54,6 @@ $(document).ready(function(){
             overlayX = X/100;
             overlayY = Y/100;
     
-            
             $(".page .background").css("transform", "translate(" + bgX + "px," + bgY + "px)");
             $(".page .background_overlay").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
             $(".page .page_content").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
