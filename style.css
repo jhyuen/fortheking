@@ -173,9 +173,39 @@ body {
     font-size: 2em;
     cursor: pointer;
     pointer-events: auto;
-    width: 4em;
-    height: auto;
+    height: 3em;
+    width: 5em;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo svg {
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+.logo svg #crown {
+    stroke: black;
+}
+.logo svg #plus {
+    stroke: black;
+    fill: black;
+}
+.logo svg #sheep {
+    fill: black;
+}
+
+.logo:hover svg #crown {
+    stroke: maroon;
+}
+.logo:hover svg #plus {
+    stroke: maroon;
+    fill: maroon;
+}
+.logo:hover svg #sheep {
+    fill: maroon;
 }
 
 .gathering_container {
