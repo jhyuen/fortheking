@@ -5,15 +5,17 @@ $(document).ready(function(){
     var height = $(window).height();
     var width = $(window).width();
 
+    // Page nav
     $("[page]").click(function () {
         $(".menu_button").removeClass("active");
         $(".page").removeClass("active");
         $(".subpage").removeClass("active");
-        $(this).addClass("active");
         pageTo = $(this).attr("page");
         $(".page." + pageTo).addClass("active");
+        $(".menu_button[page='"+ pageTo + "']").addClass("active");
     });
 
+    // Subpage nav
     $("[subpage]").click(function () {
         $(".subpage").removeClass("active");
         subpageTo = $(this).attr("subpage");
@@ -21,6 +23,7 @@ $(document).ready(function(){
         $(".subpage." + subpageTo).addClass("active");
     });
 
+    // Link to other websites
     $("[link]").click(function () {
         var url = $(this).attr("link");
         var win = window.open(url);
@@ -33,6 +36,7 @@ $(document).ready(function(){
         }
     });
 
+    // Parallax
     $("body").mousemove(function(e) {
         var X = e.pageX - (width / 2);
         var Y = e.pageY - (height / 2);
@@ -40,8 +44,11 @@ $(document).ready(function(){
         pageY = Y/80;
         bgX = X/40;
         bgY = Y/40;
+        overlayX = X/100;
+        overlayY = Y/100;
 
         $(".page").css("transform", "translate(" + pageX + "px," + pageY + "px)");
         $(".page .background").css("transform", "translate(" + bgX + "px," + bgY + "px)");
+        $(".page .background_overlay").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
     });
 });
