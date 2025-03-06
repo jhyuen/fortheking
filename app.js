@@ -43,7 +43,7 @@ $(document).ready(function(){
     });
 
     // Parallax
-    if (!is_mobile) {
+    if (!isMobile) {
         $("body").mousemove(function(e) {
             var X = e.pageX - (width / 2);
             var Y = e.pageY - (height / 2);
@@ -54,9 +54,10 @@ $(document).ready(function(){
             overlayX = X/100;
             overlayY = Y/100;
     
-            $(".page").css("transform", "translate(" + pageX + "px," + pageY + "px)");
+            
             $(".page .background").css("transform", "translate(" + bgX + "px," + bgY + "px)");
             $(".page .background_overlay").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
+            $(".page .page_content").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
         });
     }
 });
