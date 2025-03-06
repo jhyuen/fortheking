@@ -1,38 +1,35 @@
 $(document).ready(function(){
-    
+
     console.log("document ready");
 
-    var cardInner = $(".card_inner");
     var height = $(window).height();
     var width = $(window).width();
 
-    cardInner.mousemove(function(e) {
-        var pageX = e.pageX - (width / 2);
-        var pageY = e.pageY - (height / 2);
-        var xDeg = pageX / 30;
-        var yDeg = pageY / 30;
-
-        if ($(this).hasClass("active")) {
-            $(this).css("transform", "rotateX(" + xDeg + "deg) rotateY(" + (180 + yDeg) + "deg)");
-        } else {
-            $(this).css("transform", "rotateX(" + xDeg + "deg) rotateY(" + yDeg + "deg)");
-        }
-    });
-    cardInner.mouseout(function(e) {
-        resetCard();
+    $("[page]").click(function () {
+        $(".menu_button").removeClass("active");
+        $(".page").removeClass("active");
+        $(".subpage").removeClass("active");
+        $(this).addClass("active");
+        pageTo = $(this).attr("page");
+        $(".page." + pageTo).addClass("active");
     });
 
-    $(".flip_btn").click(function () {
-        console.log("clicked flip button");
-        cardInner.toggleClass("active");
-        resetCard();
+    $("[subpage]").click(function () {
+        $(".subpage").removeClass("active");
+        subpageTo = $(this).attr("subpage");
+        console.log(subpageTo)
+        $(".subpage." + subpageTo).addClass("active");
     });
 
-    function resetCard () {  
-        if (cardInner.hasClass("active")) {
-            cardInner.css("transform", "rotateX(" + 0 + "deg) rotateY(" + 180 + "deg)");
-        } else {
-            cardInner.css("transform", "rotateX(" + 0 + "deg) rotateY(" + 0 + "deg)");
-        }
-    }
+    $("body").mousemove(function(e) {
+        var X = e.pageX - (width / 2);
+        var Y = e.pageY - (height / 2);
+        pageX = X/80;
+        pageY = Y/80;
+        bgX = X/40;
+        bgY = Y/40;
+
+        $(".page").css("transform", "translate(" + pageX + "px," + pageY + "px)");
+        $(".page .background").css("transform", "translate(" + bgX + "px," + bgY + "px)");
+    });
 });

@@ -1,137 +1,227 @@
-@font-face {
-    font-family: dancingBold;
-    src: url(resources/font/DancingScript-Bold.ttf);
-}
-@font-face {
-    font-family: dancingMedium;
-    src: url(resources/font/DancingScript-Medium.ttf);
-}
-@font-face {
-    font-family: dancingRegular;
-    src: url(resources/font/DancingScript-Regular.ttf);
-}
-@font-face {
-    font-family: dancingSemiBold;
-    src: url(resources/font/DancingScript-SemiBold.ttf);
-}
-
 body {
-    background-image: url(resources/bg-2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    font-family: 'Times New Roman', serif;
 }
-.card {
+
+.page {
     position: absolute;
-    width: 60vh;
-    height: 80vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    perspective: 1000px;
-}
-.card_inner {
-    position: relative;
-    width: 100%;
     height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.card_inner.active {
-    transform: rotateX(0deg) rotateY(180deg);
-}
-.card_front, .card_back {
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+    width: 100%;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    transition: opacity ease 1s, transform ease 0s;
 }
-.card_front {
+
+.page.active {
+    left: 0 !important;
+    top: 0 !important;
+    pointer-events: auto;
+    opacity: 100%;
+}
+
+.page .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(resources/peoni-single.jpg);
+    height: 120%;
+    width: 120%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform ease 0s;
 }
-.card_back {
-    position: absolute;
-    width: calc(100% - 8vw);
-    height: calc(100% - 8vw);
-    transform: rotateX(0deg) rotateY(180deg);
-    background-color: #D8DAD7;
-    padding: 4vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+
+.page.home .background {
+    background-image: url(resources/home_bg.jpg);
 }
-.title {
-    font-size: 5.5vmin;
-    font-family: dancingBold;
+
+.page.about .background{
+    background-image: url(resources/about_bg.jpg);
+}
+
+.page.gatherings .background{
+    background-image: url(resources/gatherings_bg.jpg);
+}
+
+.page.connect .background{
+    background-image: url(resources/connect_bg.jpg);
+}
+
+.bottom_bar {
     position: absolute;
+    bottom: 2em;
     left: 50%;
-    top: 13%;
     transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    display: inline;
+    display: flex;
+    justify-content: auto;
 }
-.flip_btn {
+
+.top_bar {
     position: absolute;
-    pointer-events: auto;
-    right: 20px;
-    bottom: 20px;
-    background-color: #c4c4c4;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    display: flex; 
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.flip_icon {
+
+.menu_button {
     position: relative;
-    width: 70%;
-    height: 70%;
+    font-size: 2em;
+    padding: 0.5em 1em;
+    pointer-events: auto;
+    cursor: pointer;
+    width: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu_button.active {
+    font-weight: bold;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+}
+
+.accent {
+    font-size: 1em;
+}
+
+.accent.left {
+    position: absolute;
+    top: 50%;
+    left: -5em;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.accent.right {
+    position: absolute;
+    top: 50%;
+    right: -5em;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.logo {
+    position: relative;
+    font-size: 2em;
+    cursor: pointer;
+    pointer-events: auto;
+    width: 4em;
+    height: auto;
+    display: flex;
+}
+
+.gathering_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gathering_card {
+    position: relative;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
+    margin: 1em;
+    border: 0.2em black solid;
+    height: 20em;
+}
+
+.gathering_card.upcoming {
+    border: 0.4em black solid;
+}
+
+.rsvp_button {
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    margin-top: 1em;
+    cursor: pointer;
+    pointer-events: auto;
+    font-size: 2em;
+    width: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.rsvp_button:hover {
+    background-color: maroon;
+}
+
+.date, .time, .location {
+    margin: 0.2em;
+    text-align: center;
+}
+
+.location {
+    font-size: 2em;
+}
+
+.date, .time {
+    font-size: 3em;
+}
+
+.statement {
+    font-size: 3em;
+    text-align: center;
+    width: 60%;
+    position: relative;
+}
+
+.subpage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0%;
     pointer-events: none;
+    transition: ease 0.5s;
+}
+
+.subpage.active {
+    opacity: 100%;
+    pointer-events: auto;
+}
+
+a {
     cursor: pointer;
+    transition: color 0.5s ease;
+    color: black;
 }
-.greeting {
-    font-size: 5.5vmin;
-    font-family: dancingBold;
-    text-align: left;
-    width: 100%;
-    position: relative;
+
+a:hover {
+    color: maroon;
 }
-.body {
-    font-size: 3vmin;
-    font-family: dancingRegular;
-    text-align: left;
-    width: 100%;
-    position: relative;
-}
-.quote {
-    font-size: 3vmin;
-    font-family: dancingRegular;
-    text-align: left;
-    width: 100%;
-    position: relative;
-}
-.closure {
-    font-size: 4vmin;
-    font-family: dancingMedium;
-    text-align: left;
-    width: 100%;
+
+.title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold; 
+    margin-bottom: 0.5em;
     position: relative;
 }
 
-
+.description {
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+}

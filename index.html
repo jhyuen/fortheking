@@ -1,30 +1,69 @@
 <!doctype html>
 <html>
   <head>
-    <title>Happy Mother's Day Card</title>
+    <title>For the King. For the One.</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
-    <div class="card">
-        <div class="card_inner">
-            <div class="card_front">
-                <div class="title">Happy Mother's Day</div>
-                <div class="flip_btn">
-                    <img class="flip_icon" src="resources/flip.svg">
-                </div>
-            </div>
-            <div class="card_back">
-                <div class="greeting">Dear Mommy,</div>
-                <div class="body">You’re the best mommy ever! I love you so much! Even though free delicious food and free rent are great, you are the best part of living at home!</div>
-                <div class="quote">"I'll love you forever<br>I'll like you for always<br>As long as I'm living<br>My mommy you'll be"</div>
-                <div class="closure">Love,<br>Joseph (not a monkey)</div>
-                <div class="flip_btn">
-                    <img class="flip_icon" src="resources/flip.svg">
-                </div>
-            </div>
+    <div class="page home active">
+      <div class="background"></div>
+      <div class="center">for the king.<br>for the one.</div>
+    </div>
+    <div class="page about">
+      <div class="background"></div>
+      <div class="subpage statement">WE ARE A GATHERING OF <a subpage="ya"><b><i>YOUNG ADULTS</i></b></a> FOCUSED ON <a subpage="prayer"><b><i>PRAYING</i></b></a> FOR <a subpage="revival"><b><i>HISTORIC REVIVAL</i></b></a> IN CHARLOTTE.</div>
+      <div class="subpage ya">
+        <div class="title">WHY YOUNG ADULTS?</div>
+        <div class="description">Throughout history, God has consistently used the next generation to press in for revival.
+          We are the next generation.</div>
+      </div>
+      <div class="subpage prayer">
+        <div class="title">WHY PRAYER?</div>
+        <div class="description">If we humble ourselves, pray, seek His face and turn from our wicked ways, then God will hear from heaven, forgive our sin, and heal our land.</div>
+      </div>
+      <div class="subpage revival">
+        <div class="title">WHY HISTORIC REVIVAL?</div>
+        <div class="description">The world is not as it should be. It needs a great move of God to awaken the church and call the world back to Him.</div>
+      </div>
+    </div>
+    <div class="page gatherings">
+      <div class="background"></div>
+      <div class="gathering_container">
+        <div class="gathering_card upcoming">
+          <div class="date">3.20</div>
+          <div class="time">7-9PM</div>
+          <div class="location">MCC Prayer Room</div>
+          <div class="rsvp_button">RSVP</div>
         </div>
+        <div class="gathering_card">
+          <div class="date">3.20</div>
+          <div class="time">7-9PM</div>
+          <div class="location">MCC Prayer Room</div>
+          <div class="rsvp_button">RSVP</div>
+        </div>
+        <div class="gathering_card">
+          <div class="date">3.20</div>
+          <div class="time">7-9PM</div>
+          <div class="location">MCC Prayer Room</div>
+          <div class="rsvp_button">RSVP</div>
+        </div>
+      </div>
+    </div>
+    <div class="page connect">
+      <div class="background"></div>
+      <div class="statement">IF YOU HAVE ANY QUESTIONS,<br>PLEASE <a href="mailto:josephnewbox@gmail.com?subject=For%20the%20King.%20For%20the%20One."><b>EMAIL US</b></a>.</div>
+    </div>
+    <div class="accent left">PREPARE THE WAY OF THE LORD</div>
+    <div class="accent right">TIL THE WHOLE EARTH KNOWS</div>
+    <div class="bottom_bar">
+      <div class="menu_button" page="about" subpage="statement">ABOUT</div>
+      <div class="menu_button" page="gatherings">GATHERINGS</div>
+      <div class="menu_button" page="connect">CONNECT</div>
+    </div>
+    <div class="top_bar">
+      <img class="logo" page="home" src="resources/logo.png"></img>
     </div>
   </body>
 </html>
