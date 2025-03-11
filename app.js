@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Call function to load the correct section on page load
+    loadPageFromUrl();
+    // Handle back/forward navigation
+    window.addEventListener("popstate", () => {
+        loadPageFromUrl();
+    });
+});
+
 $(document).ready(function(){
 
     console.log("document ready");
@@ -13,20 +22,14 @@ $(document).ready(function(){
 
     // Page nav
     $("[page]").click(function () {
-        $(".menu_button").removeClass("active");
-        $(".page").removeClass("active");
-        $(".subpage").removeClass("active");
         pageTo = $(this).attr("page");
-        $(".page." + pageTo).addClass("active");
-        $(".menu_button[page='"+ pageTo + "']").addClass("active");
+        setActivePage(pageTo);
     });
 
     // Subpage nav
     $("[subpage]").click(function () {
-        $(".subpage").removeClass("active");
         subpageTo = $(this).attr("subpage");
-        console.log(subpageTo)
-        $(".subpage." + subpageTo).addClass("active");
+        setActiveSubpage(subpageTo);
     });
 
     // Link to other websites
@@ -56,7 +59,53 @@ $(document).ready(function(){
     
             $(".page .background").css("transform", "translate(" + bgX + "px," + bgY + "px)");
             $(".page .background_overlay").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
+            $(".page .background_color").css("transform", "translate(" + bgX + "px," + bgY + "px)");
             $(".page .page_content").css("transform", "translate(" + overlayX + "px," + overlayY + "px)");
         });
     }
 });
+
+function loadPageFromUrl() {
+    // Get the page name from the URL (default to 'home' if empty)
+    var loadPage = location.pathname.substring(1) || "home";
+    console.log(location.pathname);
+    console.log(location.pathname.substring);
+    
+    var pageIDs = [];
+
+    // Get all page names
+    $(".page").each(function(){
+        pageIDs.push(this.id);
+    });
+
+    console.log(pageIDs);
+
+    if (!pageIDs.includes(loadPage)) {
+        loadPage = "home";
+    }
+
+    setActivePage(loadPage);
+}
+
+function setActivePage(page) {
+    $(".menu_button").removeClass("active");
+    $(".page").removeClass("active");
+    $(".subpage").removeClass("active");
+    targetPage = $(".page#" + page);
+    targetPage.addClass("active");
+    
+    defaultSubpage = targetPage.attr("auto");
+    if (defaultSubpage) {
+        setActiveSubpage(defaultSubpage);
+    }
+    // Update lower menu
+    $(".menu_button[page='"+ page + "']").addClass("active");
+
+    // Change the URL without reloading the page
+    history.pushState(null, '', page);
+}
+
+function setActiveSubpage(subpage) {
+    $(".subpage").removeClass("active");
+    $(".subpage#" + subpage).addClass("active");
+}

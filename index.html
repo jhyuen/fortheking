@@ -8,21 +8,26 @@
   </head>
   <body>
     <!-- HOME -->
-    <div class="page home active">
+    <div id="home" class="page">
       <div class="background"></div>
       <div class="background_overlay"></div>
+      <div class="background_color"></div>
       <div class="page_content">
         <div class="center">for the <a link="https://www.biblegateway.com/passage/?search=Matthew%206%3A33&version=NIV">king</a>.<br>for the <a link="https://www.biblegateway.com/passage/?search=Luke%2015%3A1-7&version=NIV">one</a>.</div>
       </div>
     </div>
 
     <!-- ABOUT -->
-    <div class="page about">
+    <div id="about" class="page" auto="statement">
       <div class="background"></div>
       <div class="background_overlay"></div>
+      <div class="background_color"></div>
       <div class="page_content">
-        <div class="subpage statement">WE ARE A GATHERING OF <a subpage="ya"><b><i>YOUNG ADULTS</i></b></a> FOCUSED ON <a subpage="prayer"><b><i>PRAYING</i></b></a> FOR <a subpage="revival"><b><i>HISTORIC REVIVAL</i></b></a> IN CHARLOTTE.</div>
-        <div class="subpage ya">
+        <div id="statement" class="subpage">
+          <div class="statement">
+            WE ARE A GATHERING OF <a subpage="ya"><b><i>YOUNG ADULTS</i></b></a> FOCUSED ON <a subpage="prayer"><b><i>PRAYING</i></b></a> FOR <a subpage="revival"><b><i>HISTORIC REVIVAL</i></b></a> IN CHARLOTTE.</div>
+          </div>  
+        <div id="ya" class="subpage">
           <div class="back_button" page="about" subpage="statement">
             <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="back_line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -36,7 +41,7 @@
           <div class="title">WHY YOUNG ADULTS?</div>
           <div class="description">Throughout history, God has consistently used the next generation to press in for revival.<br>We are the next generation.</div>
         </div>
-        <div class="subpage prayer">
+        <div id="prayer" class="subpage">
           <div class="back_button" page="about" subpage="statement">
             <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="back_line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -50,7 +55,7 @@
           <div class="title">WHY PRAYER?</div>
           <div class="description">If we humble ourselves, pray, seek His face and turn from our wicked ways, then God will hear from heaven, forgive our sin, and heal our land.</div>
         </div>
-        <div class="subpage revival">
+        <div id="revival" class="subpage">
           <div class="back_button" page="about" subpage="statement">
             <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="back_line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -68,16 +73,17 @@
     </div>
 
     <!-- GATHERINGS -->
-    <div class="page gatherings">
+    <div id="gatherings" class="page">
       <div class="background"></div>
       <div class="background_overlay"></div>
+      <div class="background_color"></div>
       <div class="page_content">
         <div class="gathering_container">
           <div class="gathering_card upcoming">
             <div class="date">3.20</div>
             <div class="time">7-9PM</div>
             <div class="location">MCC Prayer Room</div>
-            <div class="rsvp_button">RSVP</div>
+            <div class="calendar_button" link="resources/iCal/FTKFTO-250320.ics">ADD TO CALENDAR</div>
           </div>
           <!-- <div class="gathering_card">
             <div class="date">3.20</div>
@@ -96,9 +102,10 @@
     </div>
 
     <!-- CONNECT -->
-    <div class="page connect">
+    <div id="connect" class="page">
       <div class="background"></div>
       <div class="background_overlay"></div>
+      <div class="background_color"></div>
       <div class="page_content">
         <div class="statement">IF YOU HAVE ANY QUESTIONS,<br>PLEASE <a href="mailto:josephnewbox@gmail.com?subject=For%20the%20King.%20For%20the%20One."><b>EMAIL US</b></a>.</div>
       </div>

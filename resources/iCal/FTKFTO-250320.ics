@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+X-WR-CALNAME:For the King. For the One.
+NAME:For the King. For the One.
+REFRESH-INTERVAL;VALUE=DURATION:P5M
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/Havana
+LAST-MODIFIED:20240422T053451Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/America/Havana
+X-LIC-LOCATION:America/Havana
+BEGIN:STANDARD
+TZNAME:CST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+DTSTART:19701101T010000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZNAME:CDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+DTSTART:19700308T000000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20250310T184920Z
+UID:1741632258460-62365@ical.marudot.com
+DTSTART;TZID=America/Havana:20250320T190000
+DTEND;TZID=America/Havana:20250320T210000
+SUMMARY:For the King. For the One. - Revival Prayer Meeting
+URL:forthekingfortheoneclt.com
+DESCRIPTION:We are a gathering of Young Adults focused on praying for historic revival in Charlotte. \n\nPlease enter by the side door across from the playground (on the right if facing the school) and go up the stairs.
+LOCATION:Mission Community Church Prayer Room - 8625 Providence Road Charlotte\, NC 28277 
+END:VEVENT
+END:VCALENDAR
