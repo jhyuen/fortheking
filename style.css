@@ -227,7 +227,7 @@ body {
 .logo svg #plus {
     stroke: black;
     fill: black;
-    transition: fill ease 0.5s;
+    transition: 0.5s ease;
 }
 .logo svg #sheep {
     fill: black;
